@@ -1,3 +1,9 @@
 import React from "react";
 
-export const Home = () => <span>Home</span>;
+export const Home = () => {
+  return (
+    <>
+      <span>Home</span>
+    </>
+  );
+};
