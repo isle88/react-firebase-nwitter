@@ -1,6 +1,6 @@
 import { Nweet } from "components/Nweet";
-import { dbService, storageService } from "fbase";
-import React, { useEffect, useRef, useState } from "react";
+import { dbService } from "fbase";
+import React, { useEffect, useState } from "react";
 import { NweetFactory } from "components/NweetFactory";
 
 export const Home = ({ userObj }) => {
@@ -20,9 +20,9 @@ export const Home = ({ userObj }) => {
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <NweetFactory userObj={userObj} />
-      <div>
+      <div style={{ marginTop: 30 }}>
         {nweets.map((nweet) => (
           <Nweet
             key={nweet.id}

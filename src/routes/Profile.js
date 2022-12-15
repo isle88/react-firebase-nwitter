@@ -37,17 +37,28 @@ export const Profile = ({ userObj, refreshUser }) => {
     setNewDisplayName(value);
   };
   return (
-    <>
-      <form onSubmit={onSubmit}>
+    <div className="container">
+      <form onSubmit={onSubmit} className="profileForm">
         <input
           onChange={onChange}
           type="text"
           placeholder="Display name"
           value={newDisplayName}
+          autoFocus
+          className="formInput"
         />
-        <input type="submit" value="Update Profile" />
+        <input
+          type="submit"
+          value="Update Profile"
+          className="formBtn"
+          style={{
+            marginTop: 10,
+          }}
+        />
       </form>
-      <button onClick={onSignOutClick}>Sign Out</button>
+      <span className="formBtn cancelBtn signOut" onClick={onSignOutClick}>
+        Sign Out
+      </span>
       {myNweet &&
         myNweet.map((nweet) => (
           <section key={nweet.createdAt}>
@@ -55,6 +66,6 @@ export const Profile = ({ userObj, refreshUser }) => {
             {nweet.text}
           </section>
         ))}
-    </>
+    </div>
   );
 };
